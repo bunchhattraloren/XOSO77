@@ -20,6 +20,7 @@ class _PageOneState extends State<PageOne> {
   int _speed = 0;
   _build2(String text, int speed, {bool isColor = true}) {
     return TableOne(
+      color: Color.fromARGB(255, 43, 51, 83),
       list: [
         Text(
           text,
@@ -28,7 +29,7 @@ class _PageOneState extends State<PageOne> {
         LoadingResult(
           doubleSpeed: _speed,
           speed: speed,
-          color: isColor ? Colors.black : Colors.red,
+          color: isColor ? Colors.white : Colors.red,
         ),
       ],
     );
@@ -36,7 +37,8 @@ class _PageOneState extends State<PageOne> {
 
   _build3(String text, int speed1, int speed2) {
     return TableOne(
-      color: Colors.grey.shade200,
+      // color: Colors.grey.shade200,
+      color: Color.fromARGB(255, 43, 51, 83),
       list: [
         Text(
           text,
@@ -56,7 +58,8 @@ class _PageOneState extends State<PageOne> {
 
   _build4(String text, int speed1, int speed2, int speed3) {
     return TableOne(
-      color: Colors.grey.shade200,
+      color: Color.fromARGB(255, 43, 51, 83),
+      // color: Colors.grey.shade200,
       list: [
         Text(
           text,
@@ -81,7 +84,7 @@ class _PageOneState extends State<PageOne> {
   _build5(String text, int speed1, int speed2, int speed3, int speed4,
       {bool isColor = true}) {
     return TableOne(
-      color: Colors.amber.shade100,
+      color: Colors.green,
       list: [
         Text(
           text,
@@ -89,22 +92,22 @@ class _PageOneState extends State<PageOne> {
         ),
         LoadingResult(
           speed: speed1,
-          color: isColor ? Colors.black : Colors.red,
+          color: isColor ? Colors.white : Colors.red,
           doubleSpeed: _speed,
         ),
         LoadingResult(
           speed: speed2,
-          color: isColor ? Colors.black : Colors.red,
+          color: isColor ? Colors.white : Colors.red,
           doubleSpeed: _speed,
         ),
         LoadingResult(
           speed: speed3,
-          color: isColor ? Colors.black : Colors.red,
+          color: isColor ? Colors.white : Colors.red,
           doubleSpeed: _speed,
         ),
         LoadingResult(
           speed: speed4,
-          color: isColor ? Colors.black : Colors.red,
+          color: isColor ? Colors.white : Colors.red,
           doubleSpeed: _speed,
         ),
       ],
@@ -184,16 +187,27 @@ class _PageOneState extends State<PageOne> {
       padding: const EdgeInsets.all(8.0),
       child: ListView(
         children: [
-          Container(
-            alignment: Alignment.center,
-            width: double.infinity,
-            child: Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Text(
-                widget.title,
-                style: TextStyle(fontWeight: FontWeight.bold),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                "assets/logo.png",
+                width: 128,
               ),
-            ),
+              Expanded(
+                child: Container(
+                  alignment: Alignment.center,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: EdgeInsets.all(15.0),
+                    child: Text(
+                      widget.title,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+              )
+            ],
           ),
           DropdownButtonWidget(),
           Row(

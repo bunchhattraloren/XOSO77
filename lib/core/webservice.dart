@@ -2,17 +2,25 @@ import 'dart:io';
 import 'package:get/get.dart';
 
 class WebService extends GetConnect {
-  Future<dynamic> getResponse() async {
+  Future<dynamic> postResponse() async {
     String deviceType = Get.deviceLocale.toString();
-    print(deviceType);
-    final response = await get("http://api.gh765.com/vn.php", headers: {
-      "devicelang": deviceType,
-    });
+    var body = {
+      "index1": 4,
+      "index2": 5,
+    };
+    final response = await post(
+        "http://gmdapp-001-site1.ftempurl.com/572d4e421e5e6b9bc11d815e8a027112",
+        body,
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "lang": deviceType,
+        });
 
     if (response.status.hasError) {
       return Future.error(response.statusText!);
     } else {
-      return response.body['success'];
+      return response.body;
       // return "200";
     }
   }

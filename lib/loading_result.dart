@@ -9,7 +9,7 @@ class LoadingResult extends StatefulWidget {
   LoadingResult(
       {Key? key,
       this.speed = 500,
-      this.color = Colors.black,
+      this.color = Colors.white,
       this.doubleSpeed = 0})
       : super(key: key);
   int speed;
@@ -63,9 +63,12 @@ class _LoadingResultState extends State<LoadingResult> {
             color: Colors.amber,
           )
         : Text(
-            (Random().nextInt(100) + 100).toString(),
+            (Random().nextInt(100000) + 100000).toString(),
             style: TextStyle(
-                color: widget.color, fontWeight: FontWeight.bold, fontSize: 23),
+              color: widget.color,
+              fontWeight: FontWeight.bold,
+              fontSize: 19,
+            ),
           );
   }
 }

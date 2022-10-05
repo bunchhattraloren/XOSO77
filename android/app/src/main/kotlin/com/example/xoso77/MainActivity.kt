@@ -1,4 +1,4 @@
-package com.gmdapp.xoso66live
+package com.gmdapp.xoso66lives
 
 import io.flutter.embedding.android.FlutterActivity
 

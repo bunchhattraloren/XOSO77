@@ -44,11 +44,14 @@ class _HomePageState extends State<HomePage> {
           width: 128,
         ),
       ),
+      backgroundColor: Color.fromARGB(255, 43, 51, 83),
       body: Center(
         child: HomePage._widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: kPrimaryColor,
+        backgroundColor: Color.fromARGB(255, 43, 51, 83),
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -64,6 +67,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
         currentIndex: _selectedIndex,
+        // selectedLabelStyle: TextStyle(color: Colors.white),
         // selectedItemColor: Colors.amber[800],
         onTap: _onItemTapped,
       ),

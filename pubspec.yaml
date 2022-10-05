@@ -38,6 +38,8 @@ dependencies:
   intl: ^0.17.0
   webview_flutter: ^3.0.4
   flutter_spinkit: ^5.1.0
+  appsflyer_sdk: ^6.8.2
+  uuid: ^3.0.6
 dev_dependencies:
   flutter_test:
     sdk: flutter
